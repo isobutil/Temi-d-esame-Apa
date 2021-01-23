@@ -26,14 +26,16 @@ int main(void) {
 	}
 	
 	j = minmaxdiff(A, N, M);
-	printf("Colonna con differenza massima: %d\n", j);
+	printf("Inidice colonna con differenza minima tra le differenze massime di ogni colonna: %d\n", j);
 	return 0;
 }
 
 int minmaxdiff(int **A, int n, int m)
 {
-	int i, j, jMax;
+	int i, j;
 	int diff, diffMax;
+	int min=INT_MAX;
+	int index;
 	
 	diffMax = 0;
 	for (j=0; j<m; j++) {
@@ -44,8 +46,15 @@ int minmaxdiff(int **A, int n, int m)
 				jMax = j;
 			}
 		}
+	/*il problema chiede il minimo tra le differenze massime di ogni colonna. Di seguito l'aggiunta per la correzione*/
+		if(diffMax>min)
+		{
+		min=diffMax
+		index=j;
+		}
+	
 	}
 	
-	printf("Differenza massima: %d\n", diffMax);
-	return jMax;
+	
+	return index;
 }
