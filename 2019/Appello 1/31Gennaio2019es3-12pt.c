@@ -31,7 +31,11 @@ int f_val_max(Ogg_nastro *sol,int pos){
     
     return sol_val;
 }
-
+//Modello delle disposizioni ripetute non è corretto poichè non conta l'ordine:
+/*
+Cito:
+Si osservi come le soluzioni (b) e (d) siano equivalenti, come pure le soluzioni (e), (f) e (g). 
+*/
 void disp_rip(int pos,int n,int k,int len_max,Ogg_nastro *val,Ogg_nastro *sol,Ogg_nastro *best_sol,int *best_val,int *dim_best_sol){
 int j,i,controllo,sol_val;
     
